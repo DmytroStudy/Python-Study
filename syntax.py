@@ -1,4 +1,6 @@
 # Variables
+from pyexpat.errors import messages
+
 a = None # empty var
 b1 = int # assign an object of int type to the var
 b2 = 444 # int number
@@ -46,6 +48,7 @@ print(i, type(i))
 
 # Console
 print("")
+
 print("Hello", end=", ") # automatically end = \n
 print("World")
 
@@ -58,6 +61,7 @@ print(f"a = {a:0b}") # in binary system
 
 # Operations
 print("")
+
 print("6/4 = ", 6/4)
 print("6//4 = ", 6//4) # integer division
 print("6%4 = ", 6%4)
@@ -85,6 +89,8 @@ print("5<<2 = ", 5<<2) # shift digits to the left
 
 
 # Comparison operations
+print("")
+
 a = 10
 b = 1
 print("1 < 5 and 10 < 5 :", 1 < 5 and 10 < 5) # and
@@ -93,3 +99,43 @@ print("not 1 < 5:", not 1 < 5) # not
 
 print("Hel in Hello :", "Hell" in "Hello") # in
 print("Hel not in Hello :", "Hell" not in "Hello") # not in
+
+
+
+# If statement
+print("")
+
+a = 5
+if a < 5:
+      print("a < 5")
+      print("00000")
+elif a > 5:
+      print("a > 5")
+      print("11111")
+else:
+      print("a = 5")
+      print("22222")
+
+
+
+#Cycles
+print("")
+
+a = 10
+while a > 0:
+      print(a, end=" ")
+      a = a - 1
+      if a == 2: break
+else: print("end")
+
+
+message = "Hello"
+for letter in message:
+      print(letter, end=" ")
+else: print("")
+
+
+for  i in range(1, 20, 2): # sequence from 1 to 10 by 2
+      if i % 5 == 0: continue
+      print(i, end=" ")
+else: print("")
