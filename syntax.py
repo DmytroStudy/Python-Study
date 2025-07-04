@@ -1,5 +1,10 @@
-# Variables
+import random
+
 from pyexpat.errors import messages
+
+
+
+# Variables
 
 a = None # empty var
 b1 = int # assign an object of int type to the var
@@ -118,7 +123,7 @@ else:
 
 
 
-#Cycles
+# Cycles
 print("")
 
 a = 10
@@ -139,3 +144,70 @@ for  i in range(1, 20, 2): # sequence from 1 to 10 by 2
       if i % 5 == 0: continue
       print(i, end=" ")
 else: print("")
+
+
+
+# Functions
+print("")
+
+def add(a, b):
+      print(a+b)
+
+add(10, 5)
+
+
+def sub(a, b):
+      def calculate(a,b): return a - b # local function
+      print(calculate(a,b))
+
+sub(10, 5)
+
+
+def hello(name="Dima"): # default value
+      print(f"Hello, {name}")
+
+hello()
+hello("Phineas")
+hello(name = "Ferb")
+
+
+def register(name, *, age, password): # All parameters (to the right of *) or (to the left of /) receive values by name only
+      print(f"Hello, {name}, {age}, {password}")
+      id = random.randint(1, 100000)
+      print("Your id:", id)
+
+register("Dima", age = 18, password = "123456789")
+
+
+def nums(*nums): # indefinite number of values
+      for n in nums: print(n, end="/")
+      print("")
+
+nums(10, 6, 99, 52, 67)
+
+
+a = nums # function as a type
+a(1, 2, 3)
+
+
+def do_function(a, b, func):
+      func(a, b)
+
+do_function(1, 2, add)
+
+
+def div(a,b): return a/b
+def mul(a,b): return a*b
+
+def select_op(op):
+      if op == "/": return div
+      elif op == "*": return mul
+      elif op == "+": return add
+      elif op == "-": return sub
+      return None
+
+operation = select_op("*")
+print(operation(1, 2))
+
+
+calc_x2 = lambda x: x^2 # anonymous function
