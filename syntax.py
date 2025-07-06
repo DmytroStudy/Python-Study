@@ -214,6 +214,7 @@ calc_x2 = lambda x: x^2 # anonymous function
 
 
 # Type conversion: int -> float -> complex
+print("")
 
 # int()
 a1 = int(4.9) # 4
@@ -231,4 +232,29 @@ c2 = str(True) # "True"
 
 
 
-#
+# Scope of variables
+print("")
+
+name = "Tom"
+
+def say_hi():
+      name = "Ben" # local var hides a global var with the same name
+      print("Hi, " + name + "!")
+
+def say_bye():
+      global name # global variable
+      print("Bye, " + name + "!")
+
+def say_whatsup():
+      word = "whats"
+
+      def say_whats():
+            nonlocal word # var from the surrounding function
+            print(word, end="")
+
+      say_whats()
+      print("up")
+
+say_hi()
+say_bye()
+say_whatsup()
