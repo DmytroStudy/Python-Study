@@ -209,5 +209,26 @@ def select_op(op):
 operation = select_op("*")
 print(operation(1, 2))
 
-
 calc_x2 = lambda x: x^2 # anonymous function
+
+
+
+# Type conversion: int -> float -> complex
+
+# int()
+a1 = int(4.9) # 4
+a2 = int("4") # 4
+a3 = int(True) # 1
+a4 = int(False) # 0
+
+# float()
+b1 = float(4) # 4.0
+b2 = float("4.9") # 4.9
+
+# str()
+c1 = str(4.9) # "4.9"
+c2 = str(True) # "True"
+
+
+
+#
