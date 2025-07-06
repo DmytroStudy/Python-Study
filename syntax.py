@@ -258,3 +258,46 @@ def say_whatsup():
 say_hi()
 say_bye()
 say_whatsup()
+
+
+
+# Closure
+print("")
+
+def outer():
+      n = 5  # lexical environment - local variable
+
+      def inner():
+            nonlocal n
+            n += 1  # lexical environment operations
+            print(n)
+
+      return inner
+
+
+fn = outer()  # fn = inner
+# function has memorized its lexical environment and can access and modify it
+fn()  # 6
+fn()  # 7
+fn()  # 8
+
+
+
+# Decorator
+print("")
+
+def decorate(input_func): # Decorator function
+      def output_func():
+            print("*****************")
+            input_func()
+            print("*****************")
+
+      return output_func
+
+
+
+@decorate  # decorator application to function hello()
+def hello():
+      print("Hello World!")
+
+hello()
